@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="shortcut icon" href="../favicon.jpeg" type="image/x-icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Outfit:wght@100..900&display=swap');
+
+        * {
+            font-family: "Outfit", sans-serif;
+            font-size: 20px;
+        }
+
+        body {
+            background-color: black;
+
+        }
+
+        #heading {
+            font-size: 30px;
+        }
+
+        #image-space {
+            /* margin-right: 20px; */
+            margin-left: 30px;
+        }
+        .cont{
+
+            width: 85%;
+        }
+        #footer-abstract {
+            position: fixed;
+            /* Set footer position to fixed */
+            bottom: 0;
+            /* Position at the bottom */
+            left: 0;
+            width: 100%;
+            /* Full width */
+            z-index: -1;
+            /* Set a z-index to send it to the back */
+        }
+
+        #footer-abstract img {
+            max-height: 75vh;
+            width: 100%;
+            object-fit: cover;
+            overflow-y: hidden;
+        }
+
+        .item {
+            display: grid;
+            grid-template-columns: repeat(2, 4fr);
+            border: 1px solid;
+            padding: 10px;
+            box-shadow: 4px 1px white;
+            background-color: white;
+
+        }
+
+        .item img {
+            width: 300px;
+            object-fit: cover;
+            /* height: 400px; */
+        }
+
+        @media screen and (max-width: 500px) {
+            .item {
+                grid-template-columns: repeat(1, 4fr);
+            }
+        }
+        .btn{
+            margin: 15px 0px;
+        }
+        .btn button{
+            padding: 10px;
+            border: none;
+            background-color: purple;
+            border-radius: 5px;
+        }
+        .btn button:hover{
+            color: white;
+            background-color: #ffc107;
+        }
+        .price{
+            font-size: 30px;
+            color: green;
+        }
+        .description{
+            font-size: 15px;
+        }
+        .title{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .footer {
+      width: 100vw;
+      height: 360px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #footer_logo {
+      width: 330px;
+    }
+
+    .foot_sec_1 {
+      margin-left: 80px;
+      display: flex;
+      height: 365px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    input[type="text"] {
+      width: 240px;
+      background-color: black;
+      border: 0px;
+      border-bottom: 1px solid grey;
+      color: white;
+    }
+
+    .foot_but1 {
+      margin-left: 20px;
+      padding: 8px;
+      border-radius: 10px;
+      width: 150px;
+    }
+
+    .foot_sec_2 {
+      width: 600px;
+      margin-right: 40px;
+    }
+
+    .foot_logo-pic {
+      width: 100px;
+    }
+
+    .logo_pic_1 {
+      display: flex;
+      margin-top: 15px;
+      width: 80%;
+      justify-content: space-around;
+    }
+
+    .logo_pic_2 {
+      margin-top: 19px;
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 110px;
+      margin-left: 8px;
+    }
+
+    .social-icon:hover {
+      color: #007bff;
+    }
+
+    .character {
+      background: url("https://www.cyberpunk.net/build/images/cyberpunk/keyart-myrewards@2x-c83c4b97.jpg");
+      background-color: rgba(10, 9, 9, 0.8);
+      height: 100%;
+
+      position: relative;
+      opacity: 0.8;
+      background-blend-mode: color-dodge;
+      animation: scrollAnimation 10s infinite alternate;
+      overflow: auto;
+    }
+
+    footer {
+      overflow: auto;
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @keyframes scrollAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Product Details</h1>
+    <div id="details"></div>
+    <div class="footer" style="background-color: black; color: white">
+        <div class="foot_sec_1">
+          <div>
+            <form>
+              <h5 style="margin-top: 25px">WE PLAY TOGETHER WE STAY TOGETHER</h5>
+              <input type="text" />
+              <input type="submit" style="margin-top: 12px" class="foot_but1" value="SUBSCRIBE" />
+            </form>
+          </div>
+    
+          <div>
+            <img id="footer_logo" style="width: 500px" src="./image/logo.png" alt="" />
+          </div>
+        </div>
+    
+        <div class="foot_sec_2">
+          <div class="logo_div_top">
+            <div class="logo_pic_1">
+              <img class="foot_logo-pic" src="./image/1.png" alt="" />
+              <img class="foot_logo-pic" src="./image/2.png" alt="" />
+              <img class="foot_logo-pic" src="./image/3.png" alt="" />
+            </div>
+            <div class="logo_pic_2">
+              <img class="foot_logo-pic" style="margin-left: 25px" src="./image/7.png" alt="" />
+              <img class="foot_logo-pic" style="margin-left: 74px" src="./image/5.png" alt="" />
+              <img class="foot_logo-pic" style="margin-left: 60px" src="./image/4.png" alt="" />
+            </div>
+          </div>
+    
+          <div class="social-icons">
+            <a href="https://www.facebook.com/groups/Cyberpunk2077/" class="social-icon"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/CyberpunkGame" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/cyberpunkgame?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@CyberpunkGame" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+    
+          <div>
+            <h5 style="margin-left: 23px; margin-top: 10px">
+              All rights reserved with The Debug Chaps
+            </h5>
+          </div>
+        </div>
+      </div>
+    <footer id="footer-abstract">
+        <img src="./images/footer.jpeg" alt="">
+    </footer>
+    <script>
+        let obj = [
+            {
+                id: 1,
+                title: 'CYBERPUNK EDGERUNNERS DAVID AND LUCY ART PRINT',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900TRIGGERFRAME_600x900.jpg?v=1711646254',
+                price: '$33.00',
+                description: 'Get ready to glitch into the neon-soaked universe of Cyberpunk: Edgerunners with our mind-bending lithograph of the kickass duo, David and Lucy. Crafted on 12 pt. Rainbow Holographic Brilliance Film, this lithograph by Studio Trigger is bursting with cyber-enhanced colors that’ll transport you to the vibrant streets, dark alleys, and glitchy reality of Night City. Sized at a stunning 40 cm x 30 cm, this is not just an art print; its your personal access key to the realm of edgerunning, cybernetics, and spine-tingling action. So grab it, jack in, and let the neon dreams wash over you.'
+            },
+            {
+                id: 2,
+                title: 'CYBERPUNK 2077 SYSTEMS PIN AND PATCH BANNER',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900_PINBANNER1_83030715-f67f-4fdb-bf8a-106d27462d3a_600x900.jpg?v=1707218047',
+                price: '$82.00',
+                description: 'Any aspiring netrunner or solo needs a proper den to decompress in between gigs. But having to make room for your weapon stash, SCOP-based takeout meals, or netrunning chair doesn’t mean you can’t leave a little room for aesthetics. Clear out some wall space and hang up the Cyberpunk 2077 Systems Pin and Patch Banner to take your den to the next level! Featuring screen-printed graphics on thick felt, it’s the perfect first step to becoming a Night City legend. '
+            },
+            {
+                id: 3,
+                title: 'MAN VS. MACHINE',
+                price: '$35.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900FLYBY4_600x900.jpg?v=1695973042',
+                description: 'The ultimate showdown — David Martinez vs. Adam Smasher, Sandevistan vs. Sandevistan. Does chromed-out cyberpunk David Martinez have what it takes to defeat Arasaka’s cyberpsycho killing machine? This t-shirt showcases a high-stakes battle between two Night City legends whose limits are pushed all the way to the edge. Its saturated tie-dye colors are complemented by the Edgerunners insignia embroidered in eye-catching cybergreen on the front.'
+            },
+            {
+                id: 4,
+                title: 'BOTTOMS UP! ',
+                price: '$35.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/Grid_1_0753e339-4e32-4a9e-b512-0f296fa63157_600x900.jpg?v=1692777238',
+                description: 'Measuring 14”L x 14”W, its the perfect fit for cocktail or potion making sessions. The black and gray design showcases Geralts Wolf School emblem surrounded by the five magical witcher signs, while its striking red eyes are sure to keep bandits from stealing away your precious beverages.'
+            },
+            {
+                id: 5,
+                title: 'GIFT CARD',
+                price: '$10.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/GiftCard_600x900.jpg?v=1685517473',
+                description: 'Send the gift of shopping to your favorite friend'
+            },
+            {
+                id: 6,
+                title: 'GIFT CARD',
+                price: '$10.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/Grid_1_7067b959-4a21-4556-b274-96842787ae6a_600x900.jpg?v=1685530421',
+                description: 'The Witcher: Ronin Battle Tee is made from 100% Airlume combed and ring-spun cotton, providing a comfortable retail fit for both men and women. This tee is designed to combine maximum comfort with stylish looks — and is complete with a CDPR GEAR 2.0 woven clip label to the left sleeve! '
+            },
+            {
+                id: 7,
+                title: 'GIFT CARD',
+                price: '$10.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/Grid_1_600x900.jpg?v=1683802443',
+                description: 'In Night City, the members of the street gang Tyger Claws can be recognized by their striking Asian tattoos, fast and powerful street bikes, tantos, and, of course, razor-sharp katanas. All to be seen in the beautiful artwork of this intricate Cyberpunk 2077 jigsaw puzzle.'
+            },
+            {
+                id: 8,
+                title: 'THE WITCHER GERALT BISHOUJO STATUE',
+                price: '$170.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900GERALTBISHOUJO17_600x900.jpg?v=1698919736',
+                description: 'Designed by Shunya Yamashita, this legendary witcher has received an unexpected makeover into a beautiful female form. Now she comes to life, ready to unsheath her silver sword and cast Igni on her foes. The statue has been meticulously modeled by none other than sculptor Yoshiki Fujimoto — pay close attention to the details of the armor, finished with realistic textures in mind.'
+            }
+        ];
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        let productId = parseInt(getUrlParameter('id'));
+
+        let product = obj.find(item => item.id === productId);
+
+        let detailsDiv = document.getElementById('details');
+        detailsDiv.innerHTML = `
+           <div class="item">
+            <div id="image-space">
+                <img src="${product.img}" alt="${product.title}" class="img">    
+            </div>
+            <div class="cont">
+                <p class="price">${product.price}</p>
+                <p class="description">${product.description}</p>
+                <h2 class="title">${product.title}</h2>   
+                <select id="" onchange="">
+                        <option value="-1">Quantity</option>
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                        <option value="1">4</option>
+                    </select> 
+                    <div class="btn">
+                <button>Buy Now</button>
+            </div>
+             </div>
+             
+            </div>
+        `;
+    </script>
+</body>
+
+</html>

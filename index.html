@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CyberPunk</title>
+  <link href="https://fonts.googleapis.com/css?family=IM+Fell+English|Playfair+Display:900" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./css/site.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="../favicon.jpeg" type="image/x-icon">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body.dark {
+      background-color: #292c35;
+    }
+
+    /* #9b59b6 */
+
+    body.dark h1,
+    body.dark .support a {
+      color: #fff;
+    }
+
+    .checkbox {
+      opacity: 0;
+      position: absolute;
+    }
+
+    .checkbox-label {
+      background-color: #111;
+      width: 50px;
+      height: 26px;
+      border-radius: 50px;
+      position: relative;
+      padding: 5px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fa-moon {
+      color: #f1c40f;
+    }
+
+    .fa-sun {
+      color: #f39c12;
+    }
+
+    .checkbox-label .ball {
+      background-color: #fff;
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      border-radius: 50%;
+      transition: transform 0.2s linear;
+    }
+
+    .checkbox:checked+.checkbox-label .ball {
+      transform: translateX(24px);
+    }
+
+
+
+
+
+
+
+
+
+    /*  Support me if you like it */
+    .support {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .support a {
+      color: #292c35;
+      font-size: 32px;
+      backface-visibility: hidden;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .support a:hover {
+      transform: scale(1.1);
+    }
+
+
+
+    .footer {
+      width: 100vw;
+      height: 360px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #footer_logo {
+      width: 330px;
+    }
+
+    .foot_sec_1 {
+      margin-left: 30px;
+      display: flex;
+      height: 365px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    input[type="text"] {
+      width: 240px;
+      background-color: black;
+      border: 0px;
+      border-bottom: 1px solid grey;
+    }
+
+    .foot_but1 {
+      margin-left: 20px;
+      padding: 4px;
+      border-radius: 10px;
+      width: 150px;
+    }
+
+    .foot_sec_2 {
+      width: 600px;
+    }
+
+    .foot_logo-pic {
+      width: 100px;
+    }
+
+    .logo_pic_1 {
+      display: flex;
+      margin-top: 15px;
+      width: 80%;
+      justify-content: space-around;
+    }
+
+    .logo_pic_2 {
+      margin-top: 19px;
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 110px;
+      margin-left: 8px;
+    }
+
+    .social-icon {
+      color: #fe4147;
+      font-size: 29px;
+      transition: color 0.3s;
+      margin-left: 16px;
+    }
+
+    .social-icon:hover {
+      color: #007bff;
+    }
+
+    nav ul li {
+      color: white;
+    }
+
+    .navbar-collapse {
+      position: relative;
+      right: 100px;
+      top: -370px;
+    }
+
+    #logo {
+      position: relative;
+      left: 490px;
+      top: -240px;
+    }
+
+    .navbar-nav {
+      padding: 2px;
+    }
+
+    nav ul li a:hover {
+      cursor: pointer;
+    }
+
+    .footer {
+      width: 100vw;
+      height: 360px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #footer_logo {
+      width: 330px;
+    }
+
+    .foot_sec_1 {
+      margin-left: 80px;
+      display: flex;
+      height: 365px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .foot_but1 {
+      margin-left: 20px;
+      padding: 8px;
+      border-radius: 10px;
+      width: 150px;
+    }
+
+    .foot_sec_2 {
+      width: 600px;
+      margin-right: 40px;
+    }
+
+    .foot_logo-pic {
+      width: 100px;
+    }
+
+    .logo_pic_1 {
+      display: flex;
+      margin-top: 15px;
+      width: 80%;
+      justify-content: space-around;
+    }
+
+    .logo_pic_2 {
+      margin-top: 19px;
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 110px;
+      margin-left: 8px;
+    }
+
+    .social-icon:hover {
+      color: #007bff;
+    }
+
+    .character {
+      background: url("https://www.cyberpunk.net/build/images/cyberpunk/keyart-myrewards@2x-c83c4b97.jpg");
+      background-color: rgba(10, 9, 9, 0.8);
+      height: 100%;
+
+      position: relative;
+      opacity: 0.8;
+      background-blend-mode: color-dodge;
+      animation: scrollAnimation 10s infinite alternate;
+      overflow: auto;
+    }
+
+    footer {
+      overflow: auto;
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @keyframes scrollAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    .card_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      filter: blur(0px);
+      z-index: 10px;
+    }
+
+    .card_container:nth-child(odd) {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 900px;
+      height: 30rem;
+      transition: all 0.1s linear;
+      cursor: pointer;
+      color: var(--clr-text-main);
+      background: linear-gradient(to right,
+          var(--clr-bg-shade),
+          var(--clr-bg));
+      margin-top: 100px;
+    }
+
+    .card_container:nth-child(even) {
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      width: 900px;
+      height: 30rem;
+      right: -600px;
+      align-items: center;
+      justify-content: end;
+      transition: all 0.1s linear;
+      cursor: pointer;
+      color: var(--clr-text-main);
+      background: linear-gradient(to right,
+          var(--clr-bg-shade),
+          var(--clr-bg));
+      margin-top: 100px;
+      transform: rotate(360deg);
+    }
+
+    .card_container:hover .image_container {
+      background-color: var(--clr-bg);
+      border: 10px solid var(--clr-accent);
+      transform: scale(1.2);
+    }
+
+    .card_content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 100%;
+      padding: 1rem;
+      margin-right: 1rem;
+      transition: 0.2s;
+    }
+
+    .card_content>.click_bait {
+      display: none;
+      font-size: 1.7rem;
+      font-weight: 800;
+      position: absolute;
+      bottom: 0;
+      right: 4;
+    }
+
+    .card_container:hover {
+      transform: scale(0.9);
+      background: linear-gradient(to left,
+          var(--clr-bg-shade),
+          var(--clr-bg));
+    }
+
+    .image_container {
+      background-color: var(--clr-bg);
+      opacity: 0.9;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-self: flex-end;
+      left: 300px;
+      align-items: center;
+      clip-path: polygon(0% 0, 96% 0, 55% 100%, 0 100%);
+      transition: 0.1s;
+    }
+
+    .card_container:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .card_container:nth-child(even) .image_container {
+      clip-path: polygon(0% 0%, 96% 0, 100% 0, 100% 100%, 50% 100%);
+    }
+
+    .card_container img {
+      width: 450px;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+
+    .card_container h1 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --clr-accent: #ebeb45;
+      --clr-bg: #181d31;
+      --clr-bg-shade: #010412;
+      --clr-bg-contrast: #2b3a55;
+      --clr-text-main: #fcffe7;
+      --clr-text-secondary: #fefcf3;
+      --clr-touch: #46c2cb;
+    }
+
+    .dark-theme {
+      --clr-accent: #eb455f;
+      --clr-bg: #181d31;
+      --clr-bg-shade: #010412;
+      --clr-bg-contrast: #2b3a55;
+      --clr-text-main: #fcffe7;
+      --clr-text-secondary: #fefcf3;
+      --clr-touch: #46c2cb;
+    }
+
+    .light-theme {
+      --clr-accent: #eb455f;
+      --clr-bg: #fcffe7;
+      --clr-bg-shade: #c0c7e7;
+      --clr-bg-contrast: #181d31;
+      --clr-text-main: #181d31;
+      --clr-text-secondary: #fffbe9;
+      --clr-touch: #46c2cb;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      background-color: var(--clr-bg);
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    .navbar{
+      position: relative;
+    }
+    nav ul li {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="glitch">
+    <div class="glitchit"></div>
+    <div class="glitchit"></div>
+    <div class="glitchit"></div>
+    <div class="glitchit"></div>
+    <div class="glitchit"></div>
+  </div>
+
+  <div id="loader" class="loading"></div>
+  <div class="contentFixed"></div>
+  <div class="content">
+    <nav class="navbar navbar-expand-sm p-4">
+      <div class="container-fluid">
+        <a class="navbar-brand p-3" href="#">
+          <img src="./image/logo.png" id="logo" class="w-50" alt="" />
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav gap-2 p-4 me-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white text-xxl" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./multimedia/index.html">MULTIMEDIA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./merchandise/products.html">MERCHANDISE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./tournament/index.html">TOURNAMENT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="./community/forum.html">
+                FORUM</a>
+            </li>
+            <div class="mt-2">
+              <input type="checkbox" class="checkbox" id="checkbox">
+              <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+              </label>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div style="overflow-x: hidden" class="character p-4 gap-4">
+    <div class="card_container">
+      <div class="card_image">
+        <div class="image_container">
+          <img
+            src="https://png.pngtree.com/png-clipart/20230225/ourmid/pngtree-cyberpunk-future-movie-game-character-modeling-png-image_6619931.png"
+            alt="icons" />
+        </div>
+      </div>
+      <div class="card_content">
+        <h1 class="card_title">丁卂匚长工乇 山乇乚乚乇丂.</h1>
+        <p>
+          Solomon Reed is one of the FIA's most formidable spies who fell off the radar after the end of the Unification War. Reed lays dormant deep inside Night City, acting as a sleeper agent.
+
+          V is tasked with contacting Reed in Dogtown to help find the missing Songbird, and he tags along with them while working on espionage missions.
+        </p>
+      </div>
+    </div>
+
+    <div class="card_container">
+      <div class="card_image">
+        <div class="image_container">
+          <img src="https://i.pinimg.com/originals/ae/48/de/ae48deb19a0c26fec0fec6175e9e4db0.png" alt="icons" />
+        </div>
+      </div>
+      <div class="card_content">
+        <h1 class="card_title">丁卂匚长工乇 山乇乚乚乇丂.</h1>
+        <p>
+          Rosalind Myers is the current president of the New United States of America. Myers used to be Militech's CEO, but her near ruthless and brazen attitude helped launch herself deep into politics, with a goal to unify all of the United States again, including Night City.
+
+
+        </p>
+      </div>
+    </div>
+    <div class="card_container">
+      <div class="card_image">
+        <div class="image_container">
+          <img src="https://www.pngall.com/wp-content/uploads/4/Cyberpunk-2077-PNG-Picture.png" alt="icons" />
+        </div>
+      </div>
+      <div class="card_content">
+        <h1 class="card_title">リ工长丅口尺 リ乇长丅口尺.</h1>
+        <p>
+          A former soldier, Kurt Hansen holds the entirety of Dogtown in his hands along with his own militia, BARGHEST. Hansen tries to keep external control away from Dogtown and will do all that he can do preserve that, even if the NUSA president crash lands on his own lawn.
+
+Hansen has also taken ahold of a mysterious military mainframe from the past, and seeks to open it and know its secrets.
+        </p>
+      </div>
+    </div>
+    <div class="card_container">
+      <div class="card_image">
+        <div class="image_container">
+          <img src="https://www.pngall.com/wp-content/uploads/4/Cyberpunk-2077-PNG-Image.png" alt="icons" />
+        </div>
+      </div>
+      <div class="card_content">
+        <h1 class="card_title">刀乇乂丅乇尺 刀乇丂卄卂山𠘨.</h1>
+        <p>
+          Mr. Hands is Pacifica and Dogtown's fixer. He appears early in the game and offers gig some help to contact the Voodoo Boys, but gets more involved during Phantom Liberty's story, as well as offering new gigs inside Dogtown.
+
+Mr. Hands also lends V some help during certain missions, in exchange for building up his reputation as a fixer among mercenaries.
+        </p>
+      </div>
+    </div>
+    <div class="card_container">
+      <div class="card_image">
+        <div class="image_container">
+          <img src="https://wonder-day.com/wp-content/uploads/2020/11/wonder-day-png-cyberpunk-2077-34.png"
+            alt="icons" />
+        </div>
+      </div>
+      <div class="card_content">
+        <h1 class="card_title">从乇尺乇刀工丅卄 丂丅口凵丅.</h1>
+        <p>
+          Cyberpunk 2077's DLC Phantom Liberty has a stellar cast of characters to offer, but you will not be able to romance anyone from the main cast or anyone else from Dogtown.
+
+          The expansion's story has more focus on action and espionage due to its spy-thriller inspiration. You'll be able to spend some time with Songbird, Solomon Reed, and others during Phantom Liberty's story but you will not be able to build a romantic relationship with them.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer" style="background-color: black; color: white">
+    <div class="foot_sec_1">
+      <div>
+        <form>
+          <h5 style="margin-top: 25px">WE PLAY TOGETHER WE STAY TOGETHER</h5>
+          <button id="feed" style=" padding: 10px; border-radius: 10px;  border: none; margin: 5px 0px 0px 5px; width: 130px; "><a style="text-decoration: none;" href="./feed.html">FEEDBACK</a></button>
+          </a>
+        </form>
+      </div>
+
+      <div>
+        <img id="footer_logo" style="width: 500px" src="./image/logo.png" alt="" />
+      </div>
+    </div>
+
+    <div class="foot_sec_2">
+      <div class="logo_div_top">
+        <div class="logo_pic_1">
+          <img class="foot_logo-pic" src="./image/1.png" alt="" />
+          <img class="foot_logo-pic" src="./image/2.png" alt="" />
+          <img class="foot_logo-pic" src="./image/3.png" alt="" />
+        </div>
+        <div class="logo_pic_2">
+          <img class="foot_logo-pic" style="margin-left: 25px" src="./image/7.png" alt="" />
+          <img class="foot_logo-pic" style="margin-left: 74px" src="./image/5.png" alt="" />
+          <img class="foot_logo-pic" style="margin-left: 60px" src="./image/4.png" alt="" />
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/groups/Cyberpunk2077/" class="social-icon"><i
+            class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/CyberpunkGame" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/cyberpunkgame?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@CyberpunkGame" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+
+      <div>
+        <h5 style="margin-left: 23px; margin-top: 10px">
+          All rights reserved with The Debug Chaps
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const checkbox = document.getElementById("checkbox")
+    checkbox.addEventListener("change", () => {
+      document.body.classList.toggle("dark")
+    })
+    var loader = document.getElementById("loader");
+    window.addEventListener("load", function (event) {
+      loader.classList.remove("loading");
+      loader.classList.add("loaded");
+      document.body.classList.add("imgloaded");
+    });
+    // Smooth scrolling animation
+    // dark mode
+    document.getElementById("theme").addEventListener("change", async () => {
+      let color = document.getElementById("theme").value;
+      if (color == "light") {
+        document.querySelectorAll(".card_title").forEach((e) => {
+          e.classList.add("text-danger");
+          e.classList.remove("text-dark"); // Remove any existing dark text class
+        });
+      } else {
+        document.querySelectorAll(".card_title").forEach((e) => {
+          e.classList.add("text-dark");
+          e.classList.remove("text-danger"); // Remove any existing danger text class
+        });
+      }
+    });
+// document.getElementById('feed').addEventListener('click',()=>{
+//   window.location.href = './feed.html'
+// })
+  </script>
+</body>
+
+</html>

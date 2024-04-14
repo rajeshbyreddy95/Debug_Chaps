@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="../favicon.jpeg" type="image/x-icon">
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        #bgrnd {
+            background-color: black;
+            margin: auto;
+        }
+/* Responsive styles */
+
+/* Navbar */
+.navbar-brand {
+    margin-right: 50px; /* Adjust based on your logo size */
+}
+
+.navbar-nav {
+    margin-right: 50px; /* Adjust based on your design */
+}
+
+.nav-link {
+    padding: 10px;
+}
+
+/* Character cards */
+.character {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card_container {
+    width: 90%; /* Adjust based on your design */
+    max-width: 300px; /* Adjust based on your design */
+    margin: 20px;
+}
+
+/* Footer */
+.footer {
+    flex-direction: column;
+    align-items: center;
+}
+
+.foot_sec_1,
+.foot_sec_2 {
+    width: 90%; /* Adjust based on your design */
+    max-width: 1200px; /* Adjust based on your design */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    font-size: 24px;
+}
+
+/* General */
+@media (max-width: 768px) {
+    /* Adjustments for medium screens */
+    .navbar-brand {
+        margin-right: 20px;
+    }
+    .navbar-nav {
+        margin-right: 20px;
+    }
+    .card_container {
+        width: 45%; /* Adjust based on your design */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Adjustments for small screens */
+    .navbar-brand {
+        margin-right: 10px;
+    }
+    .navbar-nav {
+        margin-right: 10px;
+    }
+    .card_container {
+        width: 90%; /* Adjust based on your design */
+    }
+}
+
+        a {
+            text-decoration: none;
+            list-style: none;
+            position: relative;
+            display: inline-block;
+        }
+        *{
+            background-color: black;
+        }
+
+        #sort-select{
+            padding: 15px;
+            background-color: black;
+            color: white;
+            border: 2px solid gray;
+            border-radius: 5px;
+            float: right;
+            margin-right: 70px;
+
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 4fr);
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            border-radius: 50px;
+        }
+
+        img {
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+        .navbar li{
+            margin-left: 15px;
+        }
+        .navbar ul{
+            margin-left: 400px;
+        }
+        .butt{
+            padding: 15px;
+            padding-bottom: 50px;
+        }
+        .des {
+            background-color: black;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            padding: 10px;
+            transform: translateY(30%);
+            transition: transform 0.8s ease;
+            opacity: 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .container-fluid{
+    text-align: center !important;
+    background-color: black;
+    width: 100%;
+    height: 90px;
+    /* margin-left: 250px !important; */
+
+
+}
+
+.navbar-nav{
+    margin-left: 240px;
+}
+
+        a:hover img {
+            transform: scale(1.05);
+            background-color: black;
+        }
+
+        a:hover .des {
+            transform: translateY(0);
+            opacity: 0.9;
+            background-color: black;
+
+        }
+
+        
+        @media screen and (max-width: 1300px) {
+            .products {
+                grid-template-columns: repeat(2, 4fr);
+
+            }
+
+            img {
+                width: 400px;
+            }
+
+            .des {
+                width: 400px;
+            }
+        }
+        @media screen and (max-width: 850px) {
+            .products {
+                grid-template-columns: repeat(2, 4fr);
+
+            }
+
+            img {
+                width: 300px;
+            }
+
+            .des {
+                width: 200px;
+            }
+        }
+        @media screen and (max-width: 650px) {
+            .products {
+                grid-template-columns: repeat(1, 4fr);
+
+            }
+
+            img {
+                width: 100%;
+            }
+
+            .des {
+                width: 400px;
+            }
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {box-sizing: border-box;}
+
+
+body.dark {background-color: #e1e4ee;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {box-sizing: border-box;}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {background-color: #292c35;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+
+.footer {
+      width: 100vw;
+      height: 360px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #footer_logo {
+      width: 330px;
+    }
+
+    .foot_sec_1 {
+      margin-left: 80px;
+      display: flex;
+      height: 365px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    input[type="text"] {
+      width: 240px;
+      background-color: black;
+      border: 0px;
+      border-bottom: 1px solid grey;
+      color: white;
+    }
+
+    .foot_but1 {
+      margin-left: 20px;
+      padding: 8px;
+      border-radius: 10px;
+      width: 150px;
+    }
+
+    .foot_sec_2 {
+      width: 600px;
+      margin-right: 40px;
+    }
+
+    .foot_logo-pic {
+      width: 100px;
+    }
+
+    .logo_pic_1 {
+      display: flex;
+      margin-top: 15px;
+      width: 80%;
+      justify-content: space-around;
+    }
+
+    .logo_pic_2 {
+      margin-top: 19px;
+      display: flex;
+      width: 70%;
+      justify-content: space-around;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 110px;
+      margin-left: 8px;
+    }
+
+    .social-icon:hover {
+      color: #007bff;
+    }
+
+    .character {
+      background: url("https://www.cyberpunk.net/build/images/cyberpunk/keyart-myrewards@2x-c83c4b97.jpg");
+      background-color: rgba(10, 9, 9, 0.8);
+      height: 100%;
+
+      position: relative;
+      opacity: 0.8;
+      background-blend-mode: color-dodge;
+      animation: scrollAnimation 10s infinite alternate;
+      overflow: auto;
+    }
+
+    footer {
+      overflow: auto;
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.8);
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @keyframes scrollAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+
+
+
+
+
+
+.support {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+
+.support a {
+  color: #292c35;
+  font-size: 32px;
+  backface-visibility: hidden;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support a:hover{
+  transform: scale(1.1);
+}
+
+
+
+.support {
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}
+
+.support a {
+  color: #292c35;
+  font-size: 32px;
+  backface-visibility: hidden;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support a:hover{
+  transform: scale(1.1);
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm p-4">
+        <div class="container-fluid">
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav gap-2 p-4 me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-xxl" href="/index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/multimedia/index.html">MULTIMEDIA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/merchandise/products.html">MERCHANDISE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/tournament/index.html">TOURNAMENT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/community/forum.html"> FORUM</a>
+                    </li>
+                   <div>
+  <input type="checkbox" class="checkbox" id="checkbox">
+  <label for="checkbox" class="checkbox-label">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+    <span class="ball"></span>
+  </label>
+</div>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="root"></div>
+    <script>
+        let obj = [
+
+            {
+                id: 1,
+                title: 'CYBERPUNK EDGERUNNERS DAVID AND LUCY ART PRINT',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900TRIGGERFRAME_600x900.jpg?v=1711646254',
+                price: '$33.00',
+                description: 'Few people make it out of the City of Dreams alive — let alone with a souvenir as snazzy, stylish, and comfortable as this — so adding this tee to your wardrobe shows that you know your way around town.'
+            },
+            {
+                id: 2,
+                title: 'HACK INTO THE SYSTEM',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900_PINBANNER1_83030715-f67f-4fdb-bf8a-106d27462d3a_600x900.jpg?v=1707218047',
+                price: '$82.00',
+                description: 'Any aspiring netrunner or solo needs a proper den to decompress in between gigs. But having to make room for your weapon stash, SCOP-based takeout meals, or netrunning chair doesn’t mean you can’t leave a little room for aesthetics.'
+            },
+            {
+                id: 3,
+                title: 'CYBERPUNK EDGERUNNERS FLY BY TEE',
+                price: '$35.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900FLYBY4_600x900.jpg?v=1695973042',
+                description: 'The ultimate showdown — David Martinez vs. Adam Smasher, Sandevistan vs. Sandevistan. Does chromed-out cyberpunk David Martinez have what it takes to defeat Arasaka’s cyberpsycho killing machine?'
+            },
+            {
+                id: 4,
+                title: 'THE WITCHER WOLF SCHOOL BAR MAT',
+                price: '$35.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/Grid_1_0753e339-4e32-4a9e-b512-0f296fa63157_600x900.jpg?v=1692777238',
+                description: 'Raise a glass and spice up your home-bar with this Witcher Wolf School Bar Mat.'
+            },
+            {
+                id: 5,
+                title: 'CD PROJEKT RED GEAR STORE GIFT CARD',
+                price: '$10.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/GiftCard_600x900.jpg?v=1685517473',
+                description: 'Send the gift of shopping to your favorite friend'
+            },
+            {
+                id: 6,
+                title: 'THE WITCHER RONIN BATTLE TEE',
+                price: '$30.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/Grid_1_7067b959-4a21-4556-b274-96842787ae6a_600x900.jpg?v=1685530421',
+                description: 'Even in feudal Japan, monstrosities and villains roam free, but fear not — the fearless monster hunter Geralt is on the case. Transplanted into the yokai-infested lands of the Far East, the skilled ronin searches for the Lady of Snow, Yuki Onna. '
+            },
+            {
+                id: 7,
+                title: 'CYBERPUNK 2077 VS FAVORITE TEE',
+                price: '$35.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/Grid_1_600x900.jpg?v=1683802443',
+                description: 'RULE JAPANTOWN LIKE THE TYGER CLAWS'
+            },
+            {
+                id: 8,
+                title: 'THE WITCHER GERALT BISHOUJO STATUE',
+                price: '$170.00',
+                img: 'https://eu.gear.cdprojektred.com/cdn/shop/files/600x900GERALTBISHOUJO17_600x900.jpg?v=1698919736',
+                description: 'The dark fantasy realm of CD PROJEKT RED’s acclaimed RPG series The Witcher joins the BISHOUJO lineup! And the first statue in this series will be… Geralt of Rivia!?'
+            }
+        ];
+
+        function renderProducts(products) {
+            let root = document.getElementById('root');
+            root.innerHTML = `
+                <div id="bgrnd">
+                    <div class="butt">
+                        <select id="sort-select" onchange="sortProducts()">
+                            <option value="-1">Select</option>
+                            <option value="low_high">Low to High</option>
+                            <option value="high_low">High to Low</option>
+                        </select>
+                    </div>
+                    
+                        <div class="products container">
+                            ${products.map(e => `
+                            <a href="./details.html?id=${e.id}">
+                                <img src=${e.img}/>
+                                <div class="des">
+                                    <p class="">${e.description}..</p>
+                                    <button class="btn btn-primary">${e.price}</button>
+                                </div>
+
+                            </a>
+                            `).join('')}
+                        </div>
+                    
+                </div>
+            `;
+        }
+
+        function sortProducts() {
+            let select = document.getElementById('sort-select');
+            let value = select.value;
+            let sortedProducts;
+            if (value === 'low_high') {
+                sortedProducts = obj.slice().sort((a, b) => parseFloat(a.price.slice(1)) - parseFloat(b.price.slice(1)));
+            } 
+            else if(value == 'high_low'){
+                sortedProducts = obj.slice().sort((a, b) => parseFloat(b.price.slice(1)) - parseFloat(a.price.slice(1)));
+            }
+            else {
+                sortedProducts = obj;
+            }
+            renderProducts(sortedProducts);
+        }
+
+        renderProducts(obj);
+        const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+})
+
+    </script>
+</body>
+
+</html>
